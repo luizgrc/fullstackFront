@@ -1,0 +1,33 @@
+.mat-dialog-title {
+	display: flex;
+	flex-direction: row;
+	h2 {
+		width: 95%;
+	}
+	mat-icon {
+		// position: absolute;
+		// margin: auto;
+		width: 5%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-end;
+	}
+}
+
+.flex-group {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.flex-element {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.flex-element > * {
+	flex: 1 1 160px;
+	margin: 10px;
+}

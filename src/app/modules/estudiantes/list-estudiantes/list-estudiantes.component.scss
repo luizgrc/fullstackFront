@@ -1,0 +1,61 @@
+:host {
+	body {
+		height: 100%;
+	}
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.header {
+	display: flex;
+	flex-direction: row;
+	.filtro .button-actions {
+		flex: 0 1 auto;
+	}
+	.filtro {
+		width: 80%;
+	}
+	.button-actions {
+		width: 20%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.header,
+.footer {
+	flex: 0 1 auto;
+}
+
+/* Not our focus */
+.header,
+.footer {
+	padding: 0.5em;
+}
+.body {
+	padding: 0.5em;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+	.mat-card {
+		max-width: 220px;
+		width: 220px;
+		margin: 20px;
+
+		.mat-card-image {
+			border-radius: 20%;
+		}
+		.mat-card-content {
+			text-align: center;
+		}
+		.mat-card-actions {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}

@@ -1,0 +1,59 @@
+<div mat-dialog-title>
+	<h2>Nuevo Estudiante</h2>
+	<mat-icon matSuffix>close</mat-icon>
+</div>
+<mat-dialog-content [formGroup]="form" class="mat-typography">
+	<!--  -->
+	<div class="flex-group">
+		<div class="flex-element">
+			<mat-form-field appearance="fill">
+				<mat-label>Nombres</mat-label>
+				<input formControlName="nombre" placeholder="Ingresar nombre" matInput>
+			</mat-form-field>
+
+			<mat-form-field appearance="fill">
+				<mat-label>Apellido Paterno</mat-label>
+				<input formControlName="apellidoPaterno" placeholder="Ingresar Apellido Paterno" matInput>
+			</mat-form-field>
+		</div>
+		<div class="flex-element">
+			<mat-form-field appearance="fill">
+				<mat-label>Apellido Materno</mat-label>
+				<input formControlName="apellidoMaterno" placeholder="Ingresar Apellido Materno" matInput>
+			</mat-form-field>
+			<mat-form-field appearance="fill">
+				<mat-label>GRADO</mat-label>
+				<mat-select formControlName="idgrado">
+					<mat-option *ngFor="let grado of grados" [value]="grado">
+						{{grado}}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+		<div class="flex-element">
+			<mat-form-field appearance="fill">
+				<mat-label>Fecha</mat-label>
+				<input formControlName="fecha_nacimiento" matInput [matDatepicker]="picker">
+				<mat-hint>MM/DD/YYYY</mat-hint>
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+			</mat-form-field>
+			<mat-form-field appearance="fill">
+				<mat-label>Edad</mat-label>
+				<input matInput type="number" placeholder="años(s)">
+			</mat-form-field>
+		</div>
+		<input formControlName="foto" type="file" accept="image/png, image/jpeg">
+
+
+	</div>
+
+
+
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button mat-button mat-raised-button color="primary" cdkFocusInitial (click)="guardar()">Agregar</button>
+	<button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

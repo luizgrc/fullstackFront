@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="header">
+		<div class="filtro">
+			<h1>Estudiantes</h1>
+			<form class="example-form">
+				<mat-form-field style="width: 80%;" appearance="fill">
+					<mat-label>Buscar</mat-label>
+					<input matInput placeholder="Buscar...">
+					<mat-icon matSuffix>search</mat-icon>
+				</mat-form-field>
+			</form>
+		</div>
+		<div class="button-actions">
+			<button (click)="onClickNuevo()" mat-raised-button color="primary">Nuevo</button>
+		</div>
+	</div>
+	<div class="body">
+
+		<mat-card *ngFor="let item of listaPersonas | async">
+			<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+			<mat-card-content>
+
+				<h1>Cesar Torres</h1>
+
+				<a>21 años(s) 9 mes(es)</a>
+
+				<a>4to Grado Prim</a>
+
+
+			</mat-card-content>
+			<mat-card-actions>
+				<!-- <button mat-button>Borrar</button> -->
+				<button mat-button mat-raised-button color="warn">Borrar <mat-icon>delete</mat-icon></button>
+			</mat-card-actions>
+		</mat-card>
+
+	</div>
+
+	<div class="footer">
+
+	</div>
+</div>
