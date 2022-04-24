@@ -42,8 +42,15 @@ export class RegeditEstudiantesComponent implements OnInit {
 		persona.fecha_nacimiento = this.form.controls.fecha_nacimiento.value;
 		persona.foto = this.form.controls.foto.value;
 
-		//this.personaService.guardar(persona);
+		this.personaService.guardar(persona).subscribe(
+			res=>{
+			  console.log(res);
+			  this.dialogRef.close(true);
+			},
+			err=> console.log(err)
+			);
 	}
+
 
 	closeDialog() {
 		this.dialogRef.close(false);

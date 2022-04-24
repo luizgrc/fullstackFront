@@ -17,20 +17,21 @@
 	<div class="body">
 
 		<mat-card *ngFor="let item of listaPersonas | async">
-			<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+			<img mat-card-image src="{{item.foto}}" alt="">
 			<mat-card-content>
 
-				<h1>Cesar Torres</h1>
-
-				<a>21 años(s) 9 mes(es)</a>
-
-				<a>4to Grado Prim</a>
+				<a>{{item.nid_persona}}</a> <br>
+				<a>{{item.idgrado}}</a> <br>
+				<a>{{item.nombre}}</a> <br>
+				<a>{{item.apellidoPaterno}}</a> <br> 
+				<a>{{item.apellidoMaterno}}</a> <br>
+				<a>{{item.fecha_nacimiento}}</a> <br>
 
 
 			</mat-card-content>
 			<mat-card-actions>
 				<!-- <button mat-button>Borrar</button> -->
-				<button mat-button mat-raised-button color="warn">Borrar <mat-icon>delete</mat-icon></button>
+				<button mat-button mat-raised-button color="warn" (click)="delete(item.nid_persona)">Borrar <mat-icon>delete</mat-icon></button>
 			</mat-card-actions>
 		</mat-card>
 

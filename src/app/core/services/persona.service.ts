@@ -9,7 +9,7 @@ import { Persona } from '~models/persona';
 	providedIn: 'root'
 })
 export class PersonaService {
-	HOST = `${environment.HOST}/persona`;
+	HOST = `${environment.HOST}`;
 
 	constructor(private http: HttpClient) { }
 
